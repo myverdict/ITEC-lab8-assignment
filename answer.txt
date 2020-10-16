@@ -1,0 +1,12 @@
+"Property or method ... is not defined on the instance but referenced during render."
+
+Question: What does this Vue warning message mean?,
+          Can you safely ignore it?, What causes it?, and How do you fix it?
+
+Answer: This Vue warning message means that you are using a variable, "total", in the template that
+        does not exist in the Vue data. This warning should be fixed and cannot be ignored. This error
+        is caused because there is no "total" property defined in the Vue data or any where else in the
+        Vue object.
+
+Fix: If variable definition is given, then check the variable, "total", spelling.<br>
+     If variable definition is not given, then create a new variable named "total.
