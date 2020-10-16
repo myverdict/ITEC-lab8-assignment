@@ -1,0 +1,45 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <h1>Hello Vue!</h1>
+
+    <label for="name">Please enter you name: </label>
+    <input v-model="name" id="name">
+
+    <div v-if="name">
+        <p>
+            Thank you, your name is {{ name }}.
+        </p>
+
+        <button v-on:click="clear">Clear input</button>
+    </div>
+
+    <div v-else>
+        <p>Waiting for data to be entered.</p>
+    </div>
+
+    <!--
+    Conditional rendering
+    Can also be written as:    <p v-if="name">     // empty string is falsy
+    <p v-if="name.length > 0">
+        Thank you, your name is {{ name }}.
+    </p>
+
+    <button v-on:click="clear">Clear input</button>
+    -->
+</div>
+
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            name: ''
+        },
+        methods: {
+            clear: function() {
+                this.name = ''
+            }
+        }
+    })
+</script>
